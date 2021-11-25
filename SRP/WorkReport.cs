@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SRP
 {
-    public class WorkReport
+    public class WorkReport : IEntryManager<WorkReportEntry>
     {
         private readonly List<WorkReportEntry> _entries;
 
