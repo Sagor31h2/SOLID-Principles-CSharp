@@ -2,22 +2,23 @@ using System.Collections.Generic;
 
 namespace OCP
 {
+
     public class SalaryCalculator
     {
-        private readonly IEnumerable<DeveloperReport> _developerReports;
+        private readonly IEnumerable<BaseSalaryCalculator> _developerCalculation;
 
-        public SalaryCalculator(List<DeveloperReport> developerReports)
+        public SalaryCalculator(IEnumerable<BaseSalaryCalculator> developerCalculation)
         {
-            _developerReports = developerReports;
+            _developerCalculation = developerCalculation;
         }
 
         public double CalculateTotalSalaries()
         {
             double totalSalaries = 0D;
 
-            foreach (var devReport in _developerReports)
+            foreach (var devCalc in _developerCalculation)
             {
-                totalSalaries += devReport.HourlyRate * devReport.WorkingHours;
+                totalSalaries += devCalc.CalculateSalary();
             }
 
             return totalSalaries;
