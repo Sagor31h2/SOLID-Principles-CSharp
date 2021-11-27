@@ -2,15 +2,12 @@ using System.Linq;
 
 namespace LSP
 {
-    public class SumCalculator
+    public class SumCalculator : Calculator
     {
-        protected readonly int[] _numbers;
-
-        public SumCalculator(int[] numbers)
+        public SumCalculator(int[] numbers) : base(numbers)
         {
-            _numbers = numbers;
         }
 
-        public int Calculate() => _numbers.Sum();
+        public override int Calculate() => _numbers.Sum();
     }
 }
