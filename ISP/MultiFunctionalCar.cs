@@ -1,8 +1,10 @@
 using System;
 namespace ISP
 {
-    public class MultiFunctionalCar : IVehicle
+    public class MultiFunctionalCar : IMultifunctionalVehicle
     {
+
+
         public void Drive()
         {
             Console.WriteLine("multifunctional car is driving");
@@ -10,7 +12,7 @@ namespace ISP
 
         public void Fly()
         {
-            Console.WriteLine("multifunctional car is flying");
+            Console.WriteLine("multifuntional car is flying");
         }
     }
 }

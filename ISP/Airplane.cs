@@ -2,12 +2,8 @@ using System;
 
 namespace ISP
 {
-    public class Airplane : IVehicle
+    public class Airplane : IAirplane
     {
-        public void Drive()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public void Fly()
         {
