@@ -6,7 +6,16 @@ namespace ISP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var car = new Car();
+            car.Drive();
+
+            var airplane = new Airplane();
+            airplane.Fly();
+
+            var mfc = new MultiFunctionalCar();
+            mfc.Drive();
+            mfc.Fly();
+
         }
     }
 }
