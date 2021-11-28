@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DIP
 {
-    public class EmployeeManager
+    public class EmployeeManager : IEmployeeSearchable
     {
         private readonly List<Employee> _employees;
 
@@ -16,6 +17,9 @@ namespace DIP
             _employees.Add(employee);
         }
 
-        public List<Employee> Employees => _employees;
+        public IEnumerable<Employee> GetEmployeesByGenderAndPosition(Gender gender, Position position)
+        {
+            return _employees.Where(emp => emp.Gender == gender && emp.Position == position);
+        }
     }
 }

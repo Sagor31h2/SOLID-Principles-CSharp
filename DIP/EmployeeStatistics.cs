@@ -1,16 +1,16 @@
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DIP
 {
     public class EmployeeStatistics
     {
-        private readonly EmployeeManager _empManager;
-        public EmployeeStatistics(EmployeeManager empManager)
+        private readonly IEmployeeSearchable _emp;
+        public EmployeeStatistics(IEmployeeSearchable emp)
         {
-            _empManager = empManager;
+            _emp = emp;
         }
-
         public int CountFemaleManagers() =>
-          _empManager.Employees.Count(emp => emp.Gender == Gender.Female && emp.Position == Position.Manager);
+        _emp.GetEmployeesByGenderAndPosition(Gender.Female, Position.Manager).Count();
     }
 }
